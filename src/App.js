@@ -7,6 +7,19 @@ export default class App extends ux.App {
         ]
     }
 
+    _init(){
+        let items = [];
+        for (let i = 0; i < 10; i++) {
+            items.push({
+                type: AssetPoster
+            })
+        }
+        this.tag("AssetList").patch({
+            items: items
+
+        })
+    }
+
     static _template() {
         return {
             Background:{
@@ -31,42 +44,7 @@ export default class App extends ux.App {
                     y: 20,
                     w: 1920,
                     h: 360,
-                    itemSize: 270,
-                    items: [
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        },
-                        {
-                            type: AssetPoster
-                        }
-                    ]
+                    itemSize: 270
                 }
             }
         };
