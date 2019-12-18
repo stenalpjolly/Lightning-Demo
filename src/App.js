@@ -1,3 +1,5 @@
+import AssetPoster from "./AssetPoster.js";
+
 export default class App extends ux.App {
 
     static getFonts() {
@@ -22,7 +24,50 @@ export default class App extends ux.App {
                 h: 360,
                 rect: true,
                 colorTop: 0xffffffff,
-                colorBottom: 0xff818181
+                colorBottom: 0xff818181,
+                AssetList:{
+                    type: lng.components.ListComponent,
+                    x: 60,
+                    y: 20,
+                    w: 1920,
+                    h: 360,
+                    itemSize: 270,
+                    items: [
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        },
+                        {
+                            type: AssetPoster
+                        }
+                    ]
+                }
             }
         };
     }
