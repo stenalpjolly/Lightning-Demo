@@ -21,7 +21,8 @@ export default class App extends ux.App {
                 w: 1920,
                 h: 360,
                 rect: true,
-                color: 0xffffffff
+                colorTop: 0xffffffff,
+                colorBottom: 0xff818181
             }
         };
     }
