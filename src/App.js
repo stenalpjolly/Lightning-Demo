@@ -51,15 +51,24 @@ export default class App extends ux.App {
     }
 
     _getFocused() {
+        this.tag("AssetList").element.patch({
+            focus: true
+        });
         return this.tag("AssetList");
     }
 
     _handleRight(){
-        return this.tag("AssetList").setNext();
+        this.tag("AssetList").element.patch({
+            focus: false
+        });
+        this.tag("AssetList").setNext();
     }
 
     _handleLeft(){
-        return this.tag("AssetList").setPrevious();
+        this.tag("AssetList").element.patch({
+            focus: false
+        });
+        this.tag("AssetList").setPrevious();
     }
 
 }
