@@ -50,4 +50,16 @@ export default class App extends ux.App {
         };
     }
 
+    _getFocused() {
+        return this.tag("AssetList");
+    }
+
+    _handleRight(){
+        return this.tag("AssetList").setNext();
+    }
+
+    _handleLeft(){
+        return this.tag("AssetList").setPrevious();
+    }
+
 }
