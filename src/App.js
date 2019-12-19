@@ -1,4 +1,5 @@
 import AssetPoster from "./AssetPoster.js";
+import Metadata from "./Metadata.js";
 
 export default class App extends ux.App {
 
@@ -9,11 +10,13 @@ export default class App extends ux.App {
 
     _init(){
         let items = [];
-        for (let i = 0; i < 10; i++) {
-            items.push({
-                type: AssetPoster
-            })
-        }
+        Metadata.results.forEach(function (asset) {
+            let newItem = {
+                type: AssetPoster,
+                model: asset
+            };
+            items.push(newItem);
+        });
         this.tag("AssetList").patch({
             items: items
 

@@ -12,7 +12,14 @@ export default class AssetPoster extends lng.Component {
                 rect: true,
                 w: 180,
                 h:270,
-                color: 0xff000000
+                color: 0xff000000,
+                PosterImg:{
+                    w: w=> w,
+                    h: h=> h,
+                    texture:{
+                        type: lng.textures.ImageTexture,
+                    }
+                }
             },
             Info:{
                 x: 0,
@@ -20,6 +27,7 @@ export default class AssetPoster extends lng.Component {
                 text: {
                     textAlign: 'left',
                     text: "Show Name",
+                    fontStyle: "bold",
                     fontSize: 20,
                     textColor: 0xff272727
                 }
@@ -38,6 +46,19 @@ export default class AssetPoster extends lng.Component {
 
     _unfocus(){
         this._setState("UnFocused");
+    }
+
+    set model(data){
+        this.tag("Info").patch({
+            text: {
+                text: data.name
+            }
+        });
+        this.tag("PosterImg").patch({
+            texture: {
+                src: "http://image.tmdb.org/t/p/original/" + data.poster_path
+            }
+        });
     }
 
 
