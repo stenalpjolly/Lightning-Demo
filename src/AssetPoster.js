@@ -42,6 +42,7 @@ export default class AssetPoster extends lng.Component {
 
     _focus(){
         this._setState("Focused");
+        this.fireAncestors("$dataChange", this._model);
     }
 
     _unfocus(){
@@ -49,6 +50,7 @@ export default class AssetPoster extends lng.Component {
     }
 
     set model(data){
+        this._model = data;
         this.tag("Info").patch({
             text: {
                 text: data.name

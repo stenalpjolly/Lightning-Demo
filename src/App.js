@@ -69,8 +69,8 @@ export default class App extends ux.App {
                 w: 1920,
                 h: 360,
                 rect: true,
-                colorTop: 0xffffffff,
-                colorBottom: 0xff818181,
+                colorTop: 0xafffffff,
+                colorBottom: 0xaf818181,
                 AssetList:{
                     type: lng.components.ListComponent,
                     x: 60,
@@ -82,6 +82,26 @@ export default class App extends ux.App {
                 }
             }
         };
+    }
+
+    $dataChange(data){
+        this.tag("Background").patch({
+            texture: {
+                src: "http://image.tmdb.org/t/p/original" + data.backdrop_path
+            }
+        });
+        this.tag("ShowInfo").patch({
+            ShowTitle:{
+                text:{
+                    text: data.name
+                }
+            },
+            ShowInfo:{
+              text: {
+                  text: data.overview
+              }
+            }
+        })
     }
 
     _getFocused() {
