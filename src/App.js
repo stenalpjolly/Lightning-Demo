@@ -28,6 +28,13 @@ export default class App extends ux.App {
                 texture: {
                     type: lng.textures.ImageTexture,
                     src: "./imgs/Background.jpg"
+                },
+                BackgroundDimmer: {
+                    w: w => w,
+                    h: h => h,
+                    rect: true,
+                    colorRight: 0xff000000,
+                    colorLeft: 0x00000000
                 }
             },
             BottomBanner:{
