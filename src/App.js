@@ -37,6 +37,29 @@ export default class App extends ux.App {
                     colorLeft: 0x00000000
                 }
             },
+            ShowInfo: {
+                x: 1290,
+                ShowTitle: {
+                    y: 144,
+                    text: {
+                        fontSize: 64,
+                        fontFace: "Arial Black",
+                        fontStyle: "bold",
+                        text: "The Mandalorian"
+                    }
+                },
+                ShowInfo: {
+                    y:246,
+                    w: 521,
+                    text:{
+                        fontSize: 24,
+                        fontFace: "Arial",
+                        wordWrap: true,
+                        textColor: 0xffE2E2E2,
+                        text: "Set after the fall of the Empire and before the emergence of the First Order, we follow the travails of a lone gunfighter in the outer reaches of the galaxy far from the authority of the New Republic."
+                    }
+                }
+            },
             BottomBanner:{
                 x: 0,
                 y: 720,
