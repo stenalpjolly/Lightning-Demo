@@ -3,7 +3,7 @@ export default class AssetPoster extends lng.Component {
     _init(){
         this.tag("Poster").patch({
             color: this.getColor()
-        })
+        });
     }
 
     static _template(){
@@ -22,21 +22,37 @@ export default class AssetPoster extends lng.Component {
         return 0xff000000 + x;
     }
 
-    set focus(focus){
-        if (focus) {
-            this.tag("Poster").patch({
-                x: -30,
-                y: -90,
-                w: 240,
-                h: 360
-            });
-        } else {
-            this.tag("Poster").patch({
-                y: 0,
-                x: 0,
-                w: 180,
-                h: 270,
-            });
-        }
+    _focus(){
+        this._setState("Focused");
+    }
+
+    _unfocus(){
+        this._setState("UnFocused");
+    }
+
+
+    static _states(){
+        return [
+            class Focused extends this {
+                $enter() {
+                    this.tag("Poster").patch({
+                        x: -30,
+                        y: -90,
+                        w: 240,
+                        h: 360
+                    });
+                }
+            },
+            class UnFocused extends this {
+                $enter() {
+                    this.tag("Poster").patch({
+                        y: 0,
+                        x: 0,
+                        w: 180,
+                        h: 270,
+                    });
+                }
+            }
+        ];
     }
 };
