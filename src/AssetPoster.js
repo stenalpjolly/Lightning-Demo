@@ -45,34 +45,38 @@ export default class AssetPoster extends lng.Component {
         return [
             class Focused extends this {
                 $enter() {
-                    this.tag("Poster").patch({
-                        x: -30,
-                        y: -90,
-                        w: 240,
-                        h: 360
-                    });
-                    this.tag("Info").patch({
-                        x: -30,
-                        text:{
-                            textColor: 0xff000000
+                    this.patch({
+                        Poster: {
+                            x: -30,
+                            y: -90,
+                            w: 240,
+                            h: 360
+                        },
+                        Info: {
+                            x: -30,
+                            text:{
+                                textColor: 0xff000000
+                            }
                         }
-                    });
+                    })
                 }
             },
             class UnFocused extends this {
                 $enter() {
-                    this.tag("Poster").patch({
-                        y: 0,
-                        x: 0,
-                        w: 180,
-                        h: 270,
-                    });
-                    this.tag("Info").patch({
-                        x: 0,
-                        text:{
-                            textColor: 0xff272727
+                    this.patch({
+                        Poster: {
+                            y: 0,
+                            x: 0,
+                            w: 180,
+                            h: 270,
+                        },
+                        Info: {
+                            x: 0,
+                            text:{
+                                textColor: 0xff272727
+                            }
                         }
-                    });
+                    })
                 }
             }
         ];
