@@ -25,6 +25,7 @@ export default class AssetPoster extends lng.Component {
     set focus(focus){
         if (focus) {
             this.tag("Poster").patch({
+                x: -30,
                 y: -90,
                 w: 240,
                 h: 360
@@ -32,6 +33,7 @@ export default class AssetPoster extends lng.Component {
         } else {
             this.tag("Poster").patch({
                 y: 0,
+                x: 0,
                 w: 180,
                 h: 270,
             });

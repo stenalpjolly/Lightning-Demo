@@ -44,7 +44,8 @@ export default class App extends ux.App {
                     y: 20,
                     w: 1920,
                     h: 360,
-                    itemSize: 270
+                    itemSize: 270,
+                    viewportScrollOffset: 0.04
                 }
             }
         };
