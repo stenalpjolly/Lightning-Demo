@@ -87,7 +87,7 @@ export default class App extends ux.App {
     $dataChange(data){
         this.tag("Background").patch({
             texture: {
-                src: "http://image.tmdb.org/t/p/original" + data.backdrop_path
+                src: "https://image.tmdb.org/t/p/original" + data.backdrop_path
             }
         });
         this.tag("ShowInfo").patch({

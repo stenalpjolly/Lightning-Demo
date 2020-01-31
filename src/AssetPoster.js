@@ -58,7 +58,7 @@ export default class AssetPoster extends lng.Component {
         });
         this.tag("PosterImg").patch({
             texture: {
-                src: "http://image.tmdb.org/t/p/original/" + data.poster_path
+                src: "https://image.tmdb.org/t/p/original/" + data.poster_path
             }
         });
     }
